@@ -1,7 +1,7 @@
-var gen = length => {
+var gen = (length, rand) => {
     var array = [];
     for (i = 0; i < length; i++) {
-        array.push(Math.floor(Math.random() * 1000));
+        array.push(Math.floor(Math.random() * rand));
     }
     return array;
 }
