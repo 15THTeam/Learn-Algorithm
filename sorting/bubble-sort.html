@@ -1,0 +1,27 @@
+<script src="utilities.js"></script>
+
+<script type="text/javascript">
+    let array = gen(10, 50);
+    console.log('Before sort');
+    log(array);
+
+    let bubbleSort = arr => {
+        console.log('Sorting...');
+
+        for (i = 0; i < arr.length; ++i) {
+            for (j = 0; j < arr.length - i - 1; ++j) {
+                if (arr[j] > arr[j + 1]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                    log(arr);
+                }
+            }
+        }
+    };
+
+    bubbleSort(array);
+    console.log('After sort');
+    log(array);
+</script>

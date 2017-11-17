@@ -1,0 +1,32 @@
+<script src="utilities.js"></script>
+
+<script type="text/javascript">
+    let array = gen(10, 50);
+    console.log('Before sort');
+    log(array);
+
+    let shellSort = arr => {
+        console.log('Sorting...');
+
+        let gap = arr.length / 2;
+        while (gap > 0) {
+            for (i = gap; i < arr.length; ++i) {
+                let temp = arr[i];
+                let j = i;
+
+                while (j >= gap && arr[j - gap] > temp) {
+                    arr[j] = arr[j - gap];
+                    j -= gap;
+                }
+                arr[j] = temp;
+
+                log(arr);
+            }
+            gap /= 2;
+        }
+    }
+
+    shellSort(array);
+    console.log('After sort');
+    log(array);
+</script>
